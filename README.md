@@ -1,4 +1,4 @@
-# qt5-style-virtuality-git
+# ivy-icon-theme
 
 A colorful and sharp icon theme.
 
