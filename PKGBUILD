@@ -19,22 +19,7 @@ pkgver() {
 }
 
 auto_distroicon() {
-	if [ $(cat /etc/os-release|grep "^ID=debian$") ];then
-		if dpkg --get-selections|grep siduction &>/dev/null;then
-			_distributor="siduction"
-		else
-			_distributor="debian"
-		fi
-	elif [ $(cat /etc/os-release|grep "^ID=opensuse$") ];then
-		_distributor="suse"
-	elif [ $(cat /etc/os-release|grep "^ID=kaos$") ];then
-		_distributor="kaos"
-	elif [ $(cat /etc/os-release|grep "^ID=chakra$") ];then
-		_distributor="chakra"
-	fi
-	if [ -f /etc/manjaro-release ];then
-		_distributor="manjaro"
-	fi
+	_distributor="kaos"
 	if [ -f 48/logos/emblem-$_distributor.png ];then
 		for _dir in $(echo $(find -maxdepth 1 -mindepth 1 -type d));do
 			cd $_dir
